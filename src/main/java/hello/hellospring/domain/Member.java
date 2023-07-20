@@ -1,9 +1,18 @@
 package hello.hellospring.domain;
 
-import java.security.SecureRandom;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.security.SecureRandom;
+@Entity
 public class Member {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public String getName() {
